@@ -6,12 +6,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import swal from 'sweetalert';
 
 function DisplayUser(props) {
-    const [updated, setupdated] = useState(false)
+    const [updated, setupdated] = useState(false) 
     const [cardData, setCardData] = useState([])
 
  //use dispaly user data fetching
     useEffect(() => {
-        const getUserUrl='http://15.207.229.231:8000/machstatz/get_all_users'
+        const getUserUrl='http://3.6.93.159:7883/machstatz/get_all_users'
         const getData= async() => {
          const respData=await axios.get(getUserUrl)
           setCardData(respData.data)
@@ -19,14 +19,14 @@ function DisplayUser(props) {
         }
         getData()
 
-    }, [updated])
+    }, [updated])  //[updated]  update only when state changes
 
    
     //delete user
 
 
    const deleteUser=async(email)=>{
-  const deleteUrl='http://15.207.229.231:8000/machstatz/delete_existing_user'
+  const deleteUrl='http://3.6.93.159:7883/machstatz/delete_existing_user'
  
   const resp=await axios.delete(deleteUrl,{params: {email}})
   if(resp.data.status==="Deleted"){
@@ -36,9 +36,9 @@ function DisplayUser(props) {
         icon: "success",
         button: "Done",
       }).then(() => {
-//    window.location.reload(false);
-     setupdated(updated===false?true:false)
-       
+  //  window.location.reload(false);  // other way is to add a state and add to useEffect
+    //  setupdated(updated===false?true:false)   //update the state
+       setupdated(!updated)
       })}
       else if(resp.data.status==="Error"){
         swal({
@@ -49,7 +49,7 @@ function DisplayUser(props) {
           });
     }
    }
-   console.log(updated)
+  
     //single card section
     const singlecard=cardData?.map(({fist_name,first_name,last_name,email},i)=>{
         return(

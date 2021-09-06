@@ -3,12 +3,10 @@ import AddUser from './AddUser';
 
 import DisplayUser from './DisplayUser';
 function App() {
-  let submit=false;
-  
   return (
     <div className="App">
-   <DisplayUser submit={submit}/>
-   <AddUser submit={submit}/>
+   <DisplayUser />
+   <AddUser />
   
    </div>
   );

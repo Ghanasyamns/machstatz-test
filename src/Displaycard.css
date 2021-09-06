@@ -5,6 +5,8 @@
     align-items:center;
     width:23%;
     height:130px;
+    margin-right: 1%;
+    margin-left: 1%;
     
     --tw-shadow: 5px 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -13,7 +15,7 @@ box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #
     display:flex;
     flex-wrap: wrap;
     flex-direction:flex-row;
-    justify-content:space-between;
+    
 }
 .name{
     font-size:20px;

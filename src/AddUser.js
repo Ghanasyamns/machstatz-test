@@ -11,7 +11,7 @@ function AddUser(props) {
     const [userName, setUserName] = useState('')
 const uploadUser= async(e)=>{
     e.preventDefault();
-const url="http://15.207.229.231:8000/machstatz/add_new_user";
+const url="http://3.6.93.159:7883/machstatz/add_new_user";
 const userData={
     email,
     fist_name: firstName,
