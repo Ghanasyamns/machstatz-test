@@ -1,2 +1,2 @@
 App link :    https://machstatz-test.herokuapp.com/
-I can access your API in development. but after saturday noon API is not working..........
+API is overHTTP.may face some error
